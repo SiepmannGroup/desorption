@@ -10,7 +10,7 @@ The main 'executable' of this repository contain two IPython Notebook files, whi
  
 Other figures in the manuscript are not related to the neural network.
 
-Dataset used in this manuscript can be found at <https://github.com/SiepmannGroup/MCCCS-DB/tree/master/diol-desorption>
+Dataset used in this manuscript can be found at <https://github.com/SiepmannGroup/MCCCS_DB/tree/master/diol-desorption>
 
 
 **Please be advised that due to the randomness in neural network initialization and training, data obtained from the code in this repository may not be identical to those in the manuscript while general information will be consistent.**
