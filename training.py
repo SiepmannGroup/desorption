@@ -44,8 +44,8 @@ EXT specifies the range of extrapolation.
 '''
 def interpolate(model, data, temps, init, npoints=200):
     X_all, Y_all = data
-    data_true = np.zeros((16, 20))
-    data_pred = np.zeros((200, 12))
+    data_true = np.zeros((16, len(temps) * 5))
+    data_pred = np.zeros((200, len(temps) * 3))
     ext = 0.5
     for i, T in enumerate(temps):
         mask = np.logical_and(X_all[:, 2] == init, X_all[:, 0] == 1000 / T)
