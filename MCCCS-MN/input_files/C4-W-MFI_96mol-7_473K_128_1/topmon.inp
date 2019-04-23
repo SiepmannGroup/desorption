@@ -1,0 +1,130 @@
+ &io
+    file_input  ='fort.4'
+    file_restart='fort.77'
+    file_struct ='input_struc.xyz'
+    file_run    ='run1a.dat'
+    file_movie  ='movie1a.dat'
+    io_output   = 2
+    run_num     = '1'
+    suffix      = 'a'
+    L_movie_xyz = F
+ /
+
+ &system
+    lnpt         = F
+    lgibbs       =   T
+    lgrand       = F
+    lanes        = F
+    lvirial      = F
+    lmipsw       = F
+    lexpee       = F
+    ldielect     = F
+    lpbc         =   T
+    lpbcx        =   T
+    lpbcy        =   T
+    lpbcz        =   T
+    lfold        =   T
+    lijall       = F
+    lchgall      = F
+    lewald       =   T
+    lcutcm       =   T
+    ltailc       =   T
+    lshift       = F
+    ldual        =   T
+    L_Coul_CBMC  = F
+    lneigh       = F
+    lexzeo       =   T
+    lslit        = F
+    lgraphite    = F
+    lsami        = F
+    lmuir        = F
+    lelect_field = F
+    lgaro        = F
+    lionic       = F
+    L_Ewald_Auto =   T
+    lmixlb       =   T
+    lmixjo       = F
+    L_spline     = F
+    L_linear     = F
+    L_vib_table  = F
+    L_bend_table = F
+    L_elect_table= F
+ /
+
+
+ &zeolite_in
+    file_zeocoord           ='zeolite.cif'
+    dgr                     = 0.1d0
+    file_ztb                ='zeolite.ztb'
+    n_pieces_ztb            = 40
+    requiredPrecision       = 0.01d0
+    num_points_interpolation= 4
+    upperLimit              = 1.0d8
+    ltailcZeo               = T
+    ltestztb                = F
+    lpore_volume            = F
+    volume_probe            = 124
+    volume_nsample          = 40000
+    lsurface_area           = F
+    area_probe              = 124
+    area_nsample            = 5000
+ /
+
+
+ATOMS
+!i type(i) epsi(i) sigi(i) q(i) mass(i) chemid(i) chname(i) [Angstrom, Kelvin, a.u.]; type 1: Lennard-Jones
+  4 1   98.0000  3.75000  0.0000  15.0347000 C   #Tr-UA CH3 alkane
+  5 1   46.0000  3.95000  0.0000  14.0268000 C   #Tr-UA CH2 alkane
+ 61 1    0.0000  0.00000  0.4350   1.0079000 H   #Tr-UA H alkanol
+ 62 1   93.0000  3.02000 -0.7000  15.9990000 O   #Tr-UA O alkanol
+ 63 1   98.0000  3.75000  0.2650  15.0347000 C   #Tr-UA CH3 alkanol
+ 64 1   46.0000  3.95000  0.2650  14.0268000 C   #Tr-UA CH2 alkanol
+ 84 1   79.0000  3.05000 -0.4820  15.9990000 O   #Tr-UA C=[O] keton
+ 85 1   54.0000  3.52000  0.5250  13.0190000 C   #Tr-UA [CH]=O alde
+ 86 1   46.0000  3.95000 -0.0430  14.0268000 C   #Tr-UA [CH2]-C=O e
+114 1   78.0000  3.15400  0.0000  15.9990000 O   #TIP4P O water
+115 1    0.0000  0.00000  0.5200   1.0079000 H   #TIP4P H water
+116 1    0.0000  0.00000 -1.0400   0.0000000 M   #TIP4P M water
+129 1   27.0000  2.80000  0.7000  12.0110000 C   #TraPPE C in CO2
+130 1   79.0000  3.05000 -0.3500  15.9990000 O   #TraPPE O in CO2
+133 1   36.0000  3.31000 -0.4820  14.0067400 N   #TraPPE N in N2
+134 1    0.0000  0.00000  0.9640   0.0000000 M   #TraPPE COM in N2
+136 1   49.0000  3.02000 -0.1130  15.9990000 O   #TraPPE O in O2
+177 1   22.0000  2.30000  1.5000  28.0855000 Si  #TraPPE-zeo Si
+178 1   53.0000  3.30000 -0.7500  15.9990000 O   #TraPPE-zeo O
+400 1    0.0000  0.00000  0.2260  15.9990000 M   #COM in O2
+END ATOMS
+
+NONBOND
+!i j type(ij) epsi(ij) sigi(ij) [Angstrom, Kelvin, a.u.]; type 1: Lennard-Jones
+END NONBOND
+
+BONDS
+!i type(i) brvib(i) brvibk(i) [Angstrom]; type 1: U = brvibk * ( r_ij - brvib ) ^ 2
+  1 1 1.54000   0.00000 # CHx-CHy
+ 20 1 0.55000   0.00000
+ 28 1 1.21000   0.00000
+ 29 1 0.94500   0.00000 # O-H
+ 30 1 1.43000   0.00000 # CHx-OH
+ 35 1 1.52000   0.00000
+END BONDS
+
+ANGLES
+!i type(i) brben(i) brbenk(i) [degree]; type 1: U = brbenk * ( theta_ijk - brben ) ^ 2 [radian]
+  1 1 114.0000   31250.0
+  2 1 112.0000   31250.0
+ 35 1 108.5000   27700.0
+ 36 1 109.5000   25200.0
+ 61 1 121.4000   31250.0
+END ANGLES
+
+DIHEDRALS
+!i type(i) vtt0(i) vtt1(i) vtt2(i) vtt3(i); !!!check vtorso.f, calctor.f!!!
+!===Begin TraPPE-UA alkane===
+  1 1  0.0  355.030  -68.190  791.320  0.0  0.0  0.0  0.0  0.0  0.0  #for linear segment (OPLS: Jorgensen, Madura, Swenson JACS 1984 106, 813)
+  2 1  -251.060  428.730  -111.850  441.270  0.0  0.0  0.0  0.0  0.0  0.0  #for segment containing a ternary carbon CH as mid-segment (split OPLS torsion; Siepmann et al Mol Phys 1997, 90, 687-693)
+  3 1  0.0  0.0  0.0  461.290  0.0  0.0  0.0  0.0  0.0  0.0  #for segment containing a quaternary carbon C as mid-segment (Mundy et al, Faraday Disc 104, 17-36 (1996))
+  4 1  686.10  86.40  -109.80  -282.20  0.0  0.0  0.0  0.0  0.0  0.0  #X--(CH2 sp3)--(CH sp2)--Y (Jorgensen JACS 106 22 6638-6646 (1984))
+  5 1  0.0  209.820  -29.170  187.930  0.0  0.0  0.0  0.0  0.0  0.0  #alkanol (H-)-O-C-(-C) from OPLS
+  6 1  0.0  176.620  -53.340  769.930  0.0  0.0  0.0  0.0  0.0  0.0  #alkanol (HO)-C-C-(-C) from OPLS
+END DIHEDRALS

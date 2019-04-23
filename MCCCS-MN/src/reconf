@@ -1,0 +1,8 @@
+#!/bin/sh
+rm -f config.cache acconfig.h
+touch INSTALL COPYING NEWS README AUTHORS ChangeLog
+aclocal #-I m4
+autoconf
+#autoheader
+automake -a
+exit
