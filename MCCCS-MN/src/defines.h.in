@@ -1,0 +1,18 @@
+#ifndef __DEFINES_H__
+#define __DEFINES_H__
+
+#define __BRANCH__ "@BRANCH@"
+#define __COMMIT_HASH__ "@COMMIT_HASH@"
+
+#define __BUILD_HOSTNAME__ "@BUILD_HOSTNAME@"
+#define __PREPROCESSOR_DEFINITIONS__ "@PREPROCESSOR_DEFINITIONS@"
+
+#define __Fortran_COMPILER_ID__ "@CMAKE_Fortran_COMPILER_ID@"
+#define __Fortran_COMPILER__ "@CMAKE_Fortran_COMPILER@"
+#define __Fortran_FLAGS__ "@SAVE_Fortran_FLAGS@"
+
+#define __CXX_COMPILER_ID__ "@CMAKE_CXX_COMPILER_ID@"
+#define __CXX_COMPILER__ "@CMAKE_CXX_COMPILER@"
+#define __CXX_FLAGS__ "@SAVE_CXX_FLAGS@"
+
+#endif

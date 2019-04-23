@@ -1,0 +1,5 @@
+# C5-W-LTA_96mol-8_373K_512_1
+This directory contains input files for the equilibria of binary system pentane-1,5-diol/water between a cubic gas phase with side length of 512 Angstroms and an LTA zeolite at a temperature of 373 K. The numbers of pentane-1,5-diol molecules and water molecules are 58 and 77, respectively. The cif file used in the simulations is found within this folder. The tabulated potential used in the simulations is currently not in this folder due to GitHub file size restrictions but will be automatically generated when the program is run.
+
+# C4-W-MFI_96mol-7_473K_128_1
+This directory contains input files for the equilibria of binary system butane-1,4-diol/water between a cubic gas phase with side length of 128 Angstroms and an MFI zeolite at a temperature of 473 K. The numbers of butane-1,4-diol molecules and water molecules are 95 and 29, respectively. The cif file used in the simulations is found within this folder. The tabulated potential used in the simulations is currently not in this folder due to GitHub file size restrictions but will be automatically generated when the program is run.

@@ -1,0 +1,946 @@
+&mc_shared
+    seed            =   1
+    nbox            =      2
+    nmolty          =       10
+    nchain          =      124
+    nstep           =   50000
+    time_limit      = 43200
+    iratio          =   50100
+    rmin            =       1.0d0
+    softcut         =       100.000000000000
+    linit           =       F
+    lreadq          =       F
+/
+
+&analysis
+    iprint          =   5000
+    imv             =   100000
+    iblock          =   1000
+    iratp           =   50100
+    iheatcapacity   =       1000000000
+    ianalyze        =       1000000
+/
+
+&mc_volume
+    tavol           =       0.40d0
+    iratv           =   50100
+    pmvlmt          = 0.0d0 0.0d0
+    nvolb           =       0
+    pmvolb          =      0.0d0
+    pmvol           = -1.0
+    pmvolx          =      0.0d0
+    pmvoly          =      0.0d0
+/
+
+&mc_swatch
+    pmswat          =   -1.0
+    nswaty          =   0
+    pmsatc          = 
+/
+
+&mc_swap
+    pmswap          =   4.058069e-01
+    pmswmt          = 1.027101e-01 -1.0 -1.0 -1.0 -1.0 -1.0 1.000000e+00 -1.0 -1.0 -1.0
+/
+
+&mc_cbmc
+    rcutin          =       5.00000000000000
+    pmcb            =   7.061121e-01
+    pmcbmt          = -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 1.000d0 -1.0 -1.0 -1.0
+    pmall           = 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0
+    nchoi1          = 32 32 32 32 32 32 32 32 32 32
+    nchoi           = 16 16 16 16 16 16 16 16 16 16
+    nchoir          = 16 16 16 16 16 16 16 16 16 16
+    nchoih          = 1 1 1 1 1 1 1 1 1 1
+    nchtor          = 100 100 100 100 100 100 100 100 100 100
+    nchbna          = 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000
+    nchbnb          = 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000
+    icbdir          = 0 0 0 0 0 0 0 0 0 0
+    icbsta          = 0 0 0 0 0 0 0 0 0 0
+    rbsmax          =       3.50000000000000
+    rbsmin          =       2.50000000000000
+    avbmc_version   =       0
+    first_bead_to_swap = 1 2 2 2 2 2 2 2 2 2
+    pmbias          = 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0
+    pmbsmt          = 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0
+    pmbias2         = 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0
+    pmfix           = 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0 0.0d0
+    lrig            =       F
+    lpresim         =       F
+    iupdatefix      =   50100
+/
+
+&mc_simple
+    armtra          =       1.000000000000000E-002
+    rmtra           =       0.300000000000000
+    rmrot           =       0.400000000000000
+    tatra           =       0.300000000000000
+    tarot           =       0.300000000000000
+    pmtra           =   8.530561e-01
+    pmtrmt          = 0.234d0 0.234d0 0.234d0 0.234d0 0.234d0 0.234d0 1.000d0 1.000d0 1.000d0 1.000d0
+    pmromt          = 0.234d0 0.234d0 0.234d0 0.234d0 0.234d0 0.234d0 1.000d0 1.000d0 1.000d0 1.000d0
+/
+
+SIMULATION_BOX
+! boxlx   boxly   boxlz   rcut  kalp   rcutnn numDimensionIsIstropic lsolid lrect lideal ltwice temperature pressure(MPa)
+40.044000 40.044000 40.044000 14.00d0 3.5 0.000 0 F F F F 473.000000 1.013250e-01 
+! nchain_1 ... nchain_nmolty ghost_particles
+29 0 0 0 0 0 95 0 0 0 0
+! inix iniy iniz inirot inimix zshift dshift use_linkcell rintramax
+0 0 0 0 0 0.0d0 0.0d0 F 0.0
+
+! boxlx   boxly   boxlz   rcut  kalp   rcutnn numDimensionIsIstropic lsolid lrect lideal ltwice temperature pressure(MPa)
+128.000000 128.000000 128.000000 6.272000e+01 3.5 0.000 0 F F F F 473.000000 1.013250e-01 
+! nchain_1 ... nchain_nmolty ghost_particles
+0 0 0 0 0 0 0 0 0 0 0
+! inix iniy iniz inirot inimix zshift dshift use_linkcell rintramax
+11 11 10 0 0 0  2.82d0 F 0.0
+
+END SIMULATION_BOX
+
+MOLECULE_TYPE
+!      nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch lsetup lq14scale qscale iurot isolute  
+WATER 4 4 4 4 4 4 T F T T F F 0.5d0 0 1000000
+! n, growpoint_1 ... growpoint_n
+0
+! unit ntype leaderq
+1 114 1
+! stretching
+0
+! bending
+0
+! torsion
+0
+! unit ntype leaderq
+2 115 2
+! stretching
+0
+! bending
+0
+! torsion
+0
+! unit ntype leaderq
+3 115 3
+! stretching
+0
+! bending
+0
+! torsion
+0
+! unit ntype leaderq
+4 116 4
+! stretching
+0
+! bending
+0
+! torsion
+0
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch  lsetup lq14scale qscale iurot isolute  
+MEOH 3 3 3 3 3 3 T F F F F F 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+0
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+0
+! torsions
+0
+! unit ntype leaderq
+3 63 3
+! stretching
+1
+2 30
+! bending
+1
+2 1 35
+! torsions
+0
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch  lsetup lq14scale qscale iurot isolute  
+ETOH 4 4 4 4 4 4 T F F F F F 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+0
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+1
+2 1 35
+! torsions
+0
+! unit ntype leaderq
+4 4 4
+! stretching
+1
+3 1
+! bending
+1
+3 2 36
+! torsions
+1
+3 2 1 5
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch  lsetup lq14scale qscale iurot isolute  
+1PROH 5 5 5 5 5 5 T F F F F F 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+1
+3 4 5 6
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+2
+2 1 35
+4 5 1
+! torsions
+0
+! unit ntype leaderq
+4 5 4
+! stretching
+2
+5 1
+3 1
+! bending
+1
+3 2 36
+! torsions
+1
+3 2 1 5
+! unit ntype leaderq
+5 4 5
+! stretching
+1
+4 1
+! bending
+1
+4 3 1
+! torsions
+1
+4 3 2 6
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch  lsetup lq14scale qscale iurot isolute  
+1BUOH 6 6 6 6 6 6 T F F F F F 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+1
+3 4 5 6
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+2
+2 1 35
+4 5 1
+! torsions
+1
+4 5 6 1
+! unit ntype leaderq
+4 5 4
+! stretching
+2
+5 1
+3 1
+! bending
+2
+5 6 1
+3 2 36
+! torsions
+1
+3 2 1 5
+! unit ntype leaderq
+5 5 5
+! stretching
+2
+6 1
+4 1
+! bending
+1
+4 3 1
+! torsions
+1
+4 3 2 6
+! unit ntype leaderq
+6 4 6
+! stretching
+1
+5 1
+! bending
+1
+5 4 1
+! torsions
+1
+5 4 3 1
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch lsetup lq14scale qscale iurot isolute  
+1PEOH 7 7 7 7 7 7 T F F F F F 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+1
+3 4 5 6
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+2
+2 1 35
+4 5 1
+! torsions
+1
+4 5 6 1
+! unit ntype leaderq
+4 5 4
+! stretching
+2
+5 1
+3 1
+! bending
+2
+5 6 1
+3 2 36
+! torsions
+2
+3 2 1 5
+5 6 7 1
+! unit ntype leaderq
+5 5 5
+! stretching
+2
+6 1
+4 1
+! bending
+2
+6 7 1
+4 3 1
+! torsions
+1
+4 3 2 6
+! unit ntype leaderq
+6 5 6
+! stretching
+2
+7 1
+5 1
+! bending
+1
+5 4 1
+! torsions
+1
+5 4 3 1
+! unit ntype leaderq
+7 4 7
+! stretching
+1
+6 1
+! bending
+1
+6 5 1
+! torsions
+1
+6 5 4 1
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch  lsetup lq14scale qscale iurot isolute  
+14BDO 8 8 8 8 8 8 T F F F F T 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+1
+3 4 5 6
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+2
+2 1 35
+4 5 1
+! torsions
+1
+4 5 6 1
+! unit ntype leaderq
+4 5 4
+! stretching
+2
+5 1
+3 1
+! bending
+2
+5 6 1
+3 2 36
+! torsions
+2
+3 2 1 5
+5 6 7 6
+! unit ntype leaderq
+5 5 5
+! stretching
+2
+6 1
+4 1
+! bending
+2
+6 7 36
+4 3 1
+! torsions
+2
+4 3 2 6
+6 7 8 5
+! unit ntype leaderq
+6 64 6
+! stretching
+2
+7 30
+5 1
+! bending
+2
+7 8 35
+5 4 1
+! torsions
+1
+5 4 3 1
+! unit ntype leaderq
+7 62 7
+! stretching
+2
+6 30
+8 29
+! bending
+1
+6 5 36
+! torsions
+1
+6 5 4 6
+! unit ntype leaderq
+8 61 8
+! stretching
+1
+7 29
+! bending
+1
+7 6 35
+! torsions
+1
+7 6 5 5
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch lsetup lq14scale qscale iurot isolute  
+15PDO 9 9 9 9 9 9 T F F F F F 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+1
+3 4 5 6
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+2
+2 1 35
+4 5 1
+! torsions
+1
+4 5 6 1
+! unit ntype leaderq
+4 5 4
+! stretching
+2
+5 1
+3 1
+! bending
+2
+5 6 1
+3 2 36
+! torsions
+2
+3 2 1 5
+5 6 7 1
+! unit ntype leaderq
+5 5 5
+! stretching
+2
+6 1
+4 1
+! bending
+2
+6 7 1
+4 3 1
+! torsions
+2
+4 3 2 6
+6 7 8 6
+! unit ntype leaderq
+6 5 6
+! stretching
+2
+7 1
+5 1
+! bending
+2
+7 8 36
+5 4 1
+! torsions
+2
+7 8 9 5
+5 4 3 1
+! unit ntype leaderq
+7 64 7
+! stretching
+2
+8 30
+6 1
+! bending
+2
+8 9 35
+6 5 1
+! torsions
+1
+6 5 4 1
+! unit ntype leaderq
+8 62 8
+! stretching
+2
+9 29
+7 30
+! bending
+1
+7 6 36
+! torsions
+1
+7 6 5 6
+! unit ntype leaderq
+9 61 9
+! stretching
+1
+8 29
+! bending
+1
+8 7 35
+! torsions
+1
+8 7 6 5
+
+!      nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch lsetup lq14scale qscale iurot isolute  
+16HDO 10 10 10 10 10 10 T F F F F F 0.5d0 0 1000000
+! n, growpoint_1 ... growpoint_n
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+1
+3 4 5 6
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+2
+2 1 35
+4 5 1
+! torsions
+1
+4 5 6 1
+! unit ntype leaderq
+4 5 4
+! stretching
+2
+5 1
+3 1
+! bending
+2
+5 6 1
+3 2 36
+! torsions
+2
+3 2 1 5
+5 6 7 1
+! unit ntype leaderq
+5 5 5
+! stretching
+2
+6 1
+4 1
+! bending
+2
+6 7 1
+4 3 1
+! torsions
+2
+4 3 2 6
+6 7 8 1
+! unit ntype leaderq
+6 5 6
+! stretching
+2
+7 1
+5 1
+! bending
+2
+7 8 1
+5 4 1
+! torsions
+2
+7 8 9 6
+5 4 3 1
+! unit ntype leaderq
+7 5 7
+! stretching
+2
+8 1
+6 1
+! bending
+2
+8 9 36
+6 5 1
+! torsions
+2
+6 5 4 1
+8 9 10 5
+! unit ntype leaderq
+8 64 8
+! stretching
+2
+9 30
+7 1
+! bending
+2
+7 6 1
+9 10 35
+! torsions
+1
+7 6 5 1
+! unit ntype leaderq
+9 62 9
+! stretching
+2
+8 30
+10 29
+! bending
+1
+8 7 36
+! torsions
+1
+8 7 6 6
+! unit ntype leaderq
+10 61 10
+! stretching
+1
+9 29
+! bending
+1
+9 8 35
+! torsions
+1
+9 8 7 5
+
+!       nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch lsetup lq14scale qscale iurot isolute  
+13PRO 7 7 7 7 7 7 T F F F F T 0.5d0 0 1000000
+! unit ntype leaderq
+1 61 1
+! stretching
+1
+2 29
+! bending
+1
+2 3 35
+! torsion
+1
+2 3 4 5
+! unit ntype leaderq
+2 62 2
+! stretching
+2
+1 29
+3 30
+! bending
+1
+3 4 36
+! torsions
+1
+3 4 5 6
+! unit ntype leaderq
+3 64 3
+! stretching
+2
+4 1
+2 30
+! bending
+2
+2 1 35
+4 5 1
+! torsions
+1
+4 5 6 6
+! unit ntype leaderq
+4 5 4
+! stretching
+2
+5 1
+3 1
+! bending
+2
+5 6 36
+3 2 36
+! torsions
+2
+3 2 1 5
+5 6 7 5
+! unit ntype leaderq
+5 64 5
+! stretching
+2
+6 30
+4 1
+! bending
+2
+6 7 35
+4 3 1
+! torsions
+1
+4 3 2 6
+! unit ntype leaderq
+6 62 6
+! stretching
+2
+7 29
+5 30
+! bending
+1
+5 4 36
+! torsions
+1
+5 4 3 6
+! unit ntype leaderq
+7 61 7
+! stretching
+1
+6 29
+! bending
+1
+6 5 35
+! torsions
+1
+6 5 4 5
+
+END MOLECULE_TYPE
+
+SAFE_CBMC
+END SAFE_CBMC
+
+MC_SWAP
+! nswapb pmswapb
+1 1.0000d0
+! box1 box2
+1 2
+! nswapb pmswapb
+0 
+! box1 box2
+! nswapb pmswapb
+0 
+! box1 box2
+! nswapb pmswapb
+0 
+! box1 box2
+! nswapb pmswapb
+0 
+! box1 box2
+! nswapb pmswapb
+0 
+! box1 box2
+! nswapb pmswapb
+1 1.0000d0
+! box1 box2
+1 2
+! nswapb pmswapb
+0 
+! box1 box2
+! nswapb pmswapb
+0 
+! box1 box2
+! nswapb pmswapb
+0 
+! box1 box2
+END MC_SWAP
+
+MC_SWATCH
+END MC_SWATCH
+
+INTERMOLECULAR_EXCLUSION
+END INTERMOLECULAR_EXCLUSION
+
+UNIFORM_BIASING_POTENTIALS
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+    0.00     0.00 
+END UNIFORM_BIASING_POTENTIALS
+
+SPECIFIC_ATOM_TRANSL
+END SPECIFIC_ATOM_TRANSL
+

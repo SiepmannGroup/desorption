@@ -1,0 +1,73 @@
+#3 3 3 2
+#O 178 0.05
+#Si 177 0.05
+data_p15229
+
+_cell_length_a                    11.857(4)
+_cell_length_b                    11.857(4)
+_cell_length_c                    11.857(4)
+_cell_angle_alpha                 90.000
+_cell_angle_beta                  90.000
+_cell_angle_gamma                 90.000
+
+loop_
+  _space_group_symop_operation_xyz
+ 'x, y, z'
+ '-x, -y, z'
+ '-x, y, -z'
+ 'x, -y, -z'
+ 'z, x, y'
+ 'z, -x, -y'
+ '-z, -x, y'
+ '-z, x, -y'
+ 'y, z, x'
+ '-y, z, -x'
+ 'y, -z, -x'
+ '-y, -z, x'
+ 'y, x, -z'
+ '-y, -x, -z'
+ 'y, -x, z'
+ '-y, x, z'
+ 'x, z, -y'
+ '-x, z, y'
+ '-x, -z, -y'
+ 'x, -z, y'
+ 'z, y, -x'
+ 'z, -y, x'
+ '-z, y, x'
+ '-z, -y, -x'
+ '-x, -y, -z'
+ 'x, y, -z'
+ 'x, -y, z'
+ '-x, y, z'
+ '-z, -x, -y'
+ '-z, x, y'
+ 'z, x, -y'
+ 'z, -x, y'
+ '-y, -z, -x'
+ 'y, -z, x'
+ '-y, z, x'
+ 'y, z, -x'
+ '-y, -x, z'
+ 'y, x, z'
+ '-y, x, -z'
+ 'y, -x, -z'
+ '-x, -z, y'
+ 'x, -z, -y'
+ 'x, z, y'
+ '-x, z, -y'
+ '-z, -y, x'
+ '-z, y, -x'
+ 'z, -y, -x'
+ 'z, y, x'
+
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+ Si1 Si 0.5000 0.86918 0.31655
+ O1 O 0.5000 0.79613 0.20387
+ O2 O 0.61064 0.84036 0.38936
+ O3 O 0.5000 1.0000 0.28299
