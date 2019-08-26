@@ -17,3 +17,7 @@ Dataset used in this manuscript can be found at <https://github.com/SiepmannGrou
 
 
 The ```MCCCS-MN``` directory contains the Monte Carlo simulation program developed and used by the Siepmann research group. The source code, compilation and input files supplied correspond to the exact version and computer architecture on which the simulation results in the manuscript were obtained. Simulation details can be found in the Supplementry Information.
+
+## Acknowledgment
+The development of SorbNet is supported by the U.S. Department of Energy (DOE), Office of Basic Energy Sciences, Division of
+Chemical Sciences, Geosciences and Biosciences under Award DE-FG02-17ER16362
