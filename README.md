@@ -1,5 +1,7 @@
 # SorbNet: Deep Neural Network Learning of Complex Binary Sorption Equilibria from Molecular Simulation Data
 
+![SorbNet](sorbnet.jpg)
+
 This repository contains the sample NN code and trained models used in the manuscript:
 
 * Y. Sun, R. F. DeJaco, J. I. Siepmann, Deep Neural Network Learning of Complex Binary Sorption Equilibria from Molecular Simulation Data,  *Chem. Sci.* **2019**, 10, 4377–4388. <https://doi.org/10.1039/c8sc05340e>  
